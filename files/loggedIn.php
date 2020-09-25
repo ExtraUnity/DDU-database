@@ -8,4 +8,7 @@
 	 <button>
 	 	<a href="logout.php">Logout</a> 
 	 </button>
+	 <button>
+	<a href="index.php">Back</a>
+</button>
 </body>
