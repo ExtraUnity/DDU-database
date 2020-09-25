@@ -3,6 +3,7 @@
 	<?php 
 		include "dbConnect.php";
 		if(isset($_POST['submit'])) {
+			session_start();
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
@@ -11,6 +12,7 @@
 		$result = mysqli_query($dbConnect,$sql);
 
 		if(mysqli_num_rows($result)>0) {
+			$_SESSION['user'] = $username;
 			header("Location: loggedIn.php");
 		} else {
 			echo "wrong username or password";
