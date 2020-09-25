@@ -6,6 +6,8 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
+		$password = sha1($password);// converts the password string to new string via SHA1. This is not safe.
+
 		$sql = "SELECT * FROM student WHERE Username='$username' AND Password='$password'";
 
 		$result = mysqli_query($dbConnect,$sql);
