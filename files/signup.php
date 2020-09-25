@@ -14,6 +14,7 @@
 			$newUsername = $_POST['username'];
 			$newPassword = $_POST['password'];
 			//we have now stored the new users information in some variables
+			$newPassword = sha1($newPassword);
 			$sql = "INSERT INTO student (`FirstName`, `LastName`, `Class`, `Username`, `Password`) VALUES ('$newFirstName', '$newLastName', '$newClass', '$newUsername', '$newPassword')";
 
 			if (mysqli_query($dbConnect, $sql)) {
