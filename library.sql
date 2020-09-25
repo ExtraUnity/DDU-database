@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Vært: 127.0.0.1
--- Genereringstid: 25. 09 2020 kl. 13:11:38
--- Serverversion: 10.4.14-MariaDB
--- PHP-version: 7.4.10
+-- Host: 127.0.0.1
+-- Generation Time: Sep 25, 2020 at 02:59 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur-dump for tabellen `book`
+-- Table structure for table `book`
 --
 
 CREATE TABLE `book` (
@@ -38,7 +38,7 @@ CREATE TABLE `book` (
 -- --------------------------------------------------------
 
 --
--- Struktur-dump for tabellen `student`
+-- Table structure for table `student`
 --
 
 CREATE TABLE `student` (
@@ -47,47 +47,52 @@ CREATE TABLE `student` (
   `Class` text NOT NULL,
   `Username` text NOT NULL,
   `Password` text NOT NULL,
-  `StudentId` int(11) NOT NULL
+  `StudentId` int(11) NOT NULL,
+  `IsAdmin` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Data dump for tabellen `student`
+-- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`FirstName`, `LastName`, `Class`, `Username`, `Password`, `StudentId`) VALUES
-('Christian', 'Vedel Petersen', '3d1', 'cvp100', '123456', 2);
+INSERT INTO `student` (`FirstName`, `LastName`, `Class`, `Username`, `Password`, `StudentId`, `IsAdmin`) VALUES
+('Emil', 'Admin', '3d1', 'EmilAdmin', '22ea1c649c82946aa6e479e1ffd321e4a318b1b0', 3, 1),
+('Christian', 'Admin', '3d1', 'ChristianAdmin', '22ea1c649c82946aa6e479e1ffd321e4a318b1b0', 4, 1),
+('Lukas', 'Admin', '3d1', 'LukasAdmin', '22ea1c649c82946aa6e479e1ffd321e4a318b1b0', 5, 1),
+('Adam', 'H', '3d1', 'AdamH', '516b9783fca517eecbd1d064da2d165310b19759', 6, 0),
+('Karl', 'Kurtsen', '2d1', 'KarlKurtsen', 'f29d53e1bcd5a93b84f861b7046209a9529d1529', 7, 0);
 
 --
--- Begrænsninger for dumpede tabeller
+-- Indexes for dumped tables
 --
 
 --
--- Indeks for tabel `book`
+-- Indexes for table `book`
 --
 ALTER TABLE `book`
   ADD PRIMARY KEY (`BookId`);
 
 --
--- Indeks for tabel `student`
+-- Indexes for table `student`
 --
 ALTER TABLE `student`
   ADD PRIMARY KEY (`StudentId`);
 
 --
--- Brug ikke AUTO_INCREMENT for slettede tabeller
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Tilføj AUTO_INCREMENT i tabel `book`
+-- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
   MODIFY `BookId` int(255) NOT NULL AUTO_INCREMENT;
 
 --
--- Tilføj AUTO_INCREMENT i tabel `student`
+-- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `StudentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `StudentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
