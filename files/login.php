@@ -1,6 +1,24 @@
 <head></head>
 <body>
-	<form action="loginVerify.php" method="post">
+	<?php 
+		include "dbConnect.php";
+		if(isset($_POST['submit'])) {
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+
+		$sql = "SELECT * FROM student WHERE Username='$username' AND Password='$password'";
+
+		$result = mysqli_query($dbConnect,$sql);
+
+		if(mysqli_num_rows($result)>0) {
+			header("Location: loggedIn.php");
+		} else {
+			echo "wrong username or password";
+		}
+
+		}
+	 ?>
+	<form action="" method="post">
 		<label for="username">Username:</label><br>
 		<input type="text" name="username"> <br><br>
 		<label for="password">Password:</label><br>
