@@ -28,5 +28,8 @@
 		<label for="password">Password:</label><br>
 		<input type="password" name="password"> <br><br>
 		<input type="submit" name="submit">
+		<button>
+	<a href="index.php">Back</a>
+</button>
 	</form>
 </body>

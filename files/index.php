@@ -10,4 +10,7 @@ Welcome to HCØL Bilbioteket
 <button>
 	<a href="signup.php">Signup</a>
 </button>
+<button>
+	<a href="createBook.php">Add new Book</a>
+</button>
 </body>
