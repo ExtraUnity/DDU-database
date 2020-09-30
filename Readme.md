@@ -8,7 +8,7 @@ Lavet af Christian Vedel Petersen 3d1, Emil Boesgaard Nørbjerg 3d1, og Lukas Ma
 
 ## Sådan installeres HCØL library.
 Start med at installere xampp fra hjemmesiden:\
-https://www.apachefriends.org/index.html\
+https://www.apachefriends.org/index.html \
 Derefter overfør DDU_database mappe fra github og indsæt i htdocs folder som befinder sig i xampp folderen.\
 Derefter søg på "localhost" i en webbrowser og tryk på "phpMyAdmin".\
 Lav nu en ny database ved at trykke på knappen "new" eller "ny" i venstre side af skærmen.\
@@ -22,7 +22,7 @@ Tryk så på knappen "Go" eller "Udfør".\
 ## How to install HCØL library.
 How to install our HCØL library:\
 Start with installing xampp from the website:\
-https://www.apachefriends.org/index.html\
+https://www.apachefriends.org/index.html \
 Then transfer the DDU_database folder from github and insert it in the htdocs folder that is located in the xampp folder.\
 Then search on "localhost" in the webbrowser and press on "phpMyAdmin".\
 Create a new database by pressing on "new" on the side of the screen.\
