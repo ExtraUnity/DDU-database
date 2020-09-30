@@ -57,6 +57,7 @@
 	 	
 	 		if($_SESSION['isAdmin'] == 1) {
 	 			echo "<button> <a href='createBook.php'>Add new Book</a></button>";
+	 			echo "<button> <a href='reset.php'>Reset library</a></button>";
 	 		}
 	 	
 	  ?>
