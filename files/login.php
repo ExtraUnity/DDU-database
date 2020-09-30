@@ -2,8 +2,11 @@
 <body>
 	<?php 
 		include "dbConnect.php";
+		session_start();
+		if(isset($_SESSION['user'])) {
+	header("Location: loggedIn.php");
+}
 		if(isset($_POST['submit'])) {
-			session_start();
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
@@ -15,6 +18,9 @@
 
 		if(mysqli_num_rows($result)>0) {
 			$_SESSION['user'] = $username;
+			$row = mysqli_fetch_array($result);
+			$_SESSION['isAdmin'] = $row['IsAdmin'];
+			$_SESSION['studentId'] = $row['StudentId'];
 			header("Location: loggedIn.php");
 		} else {
 			echo "wrong username or password";

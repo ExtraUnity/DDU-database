@@ -4,6 +4,9 @@
 <body>
 <?php
 include 'dbConnect.php';
+if($_SESSION['isAdmin'] != 1) {
+	header("Location: loggedIn.php");
+}
 		if(isset($_POST['submit'])) {
 
 
@@ -29,7 +32,7 @@ include 'dbConnect.php';
 		<input type="text" name="author" required><br><br>
 		<input type="submit" name="submit">
 	<button>
-	<a href="index.php">Back</a>
+	<a href="loggedIn.php">Back</a>
 </button>
 	</form>
 </body>
