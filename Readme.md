@@ -6,7 +6,7 @@ Opgaven er at lave et bibliotek, med udlån til elever på skolen.
 Lavet af Christian Vedel Petersen 3d1, Emil Boesgaard Nørbjerg 3d1, og Lukas Mansa Kristensen 3d1.
 
 
-## Sådan installeres HCØL library.\
+## Sådan installeres HCØL library.
 Start med at installere xampp fra hjemmesiden:\
 https://www.apachefriends.org/index.html\
 Derefter overfør DDU_database mappe fra github og indsæt i htdocs folder som befinder sig i xampp folderen.\
@@ -19,7 +19,7 @@ Vælg filen "library.sql" fra mappen "DDU_database".\
 Tryk så på knappen "Go" eller "Udfør".\
 Åben et nyt vindu i webbrowseren og gå ind på localhost/DDU_database/files for at åbne HCØL library.\
 
-## How to install HCØL library.\
+## How to install HCØL library.
 How to install our HCØL library:\
 Start with installing xampp from the website:\
 https://www.apachefriends.org/index.html\
