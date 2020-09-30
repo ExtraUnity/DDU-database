@@ -15,6 +15,11 @@ if($_SESSION['isAdmin'] != 1) {
 			}
 			$newTitle = $_POST['title'];
 			$newAuthor = $_POST['author'];
+
+			$newTitle = mysqli_real_escape_string($dbConnect, $newTitle);
+			$newAuthor =  mysqli_real_escape_string($dbConnect, $newAuthor);
+			// removes injections for the user inputs.
+
 			//we have now stored the new book information in some variables
 			$sql = "INSERT INTO book (`Title`, `Author`) VALUES ('$newTitle', '$newAuthor')";
 

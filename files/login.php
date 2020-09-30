@@ -9,6 +9,11 @@
 		if(isset($_POST['submit'])) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+		
+		$username = mysqli_real_escape_string($dbConnect, $username);
+		$password = mysqli_real_escape_string($dbConnect, $password);
+		// prevents injections, fx. SQL, JS, PHP.
+
 
 		$password = sha1($password);// converts the password string to new string via SHA1. This is not safe.
 
