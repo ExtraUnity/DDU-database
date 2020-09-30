@@ -17,7 +17,7 @@ Tryk nu på knappen "importer".\
 Tryk på "Choose file" eller "Vælg fil".\
 Vælg filen "library.sql" fra mappen "DDU_database".\
 Tryk så på knappen "Go" eller "Udfør".\
-Åben et nyt vindu i webbrowseren og gå ind på localhost/DDU_database/files for at åbne HCØL library.\
+Åben et nyt vindu i webbrowseren og gå ind på localhost/DDU_database/files for at åbne HCØL library.
 
 ## How to install HCØL library.
 How to install our HCØL library:\
@@ -31,4 +31,4 @@ Press on the button "import".\
 Press on "Choose file".\
 Choose the file "library.sql" from the folder "DDU_database".\
 Then press on "Go".\
-Open a new browser windoe and visit localhost/DDU_database/files to open our HCØL library.\
+Open a new browser windoe and visit localhost/DDU_database/files to open our HCØL library.
