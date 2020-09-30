@@ -14,7 +14,17 @@
 			$newUsername = $_POST['username'];
 			$newPassword = $_POST['password'];
 			//we have now stored the new users information in some variables
+
+                        $newFirstName =  mysqli_real_escape_string($dbConnect, $newFirstName);
+                        $newLastName =  mysqli_real_escape_string($dbConnect, $newLastName);
+                        $newClass =  mysqli_real_escape_string($dbConnect, $newClass);
+                        $newUsername = mysqli_real_escape_string($dbConnect, $newUsername);
+                        $newPassword =  mysqli_real_escape_string($dbConnect, $newPassword);
+			// TODO: make the remaining 4. 
+ 
+
 			$newPassword = sha1($newPassword);
+			//The password has been hashed
 			$sql = "INSERT INTO student (`FirstName`, `LastName`, `Class`, `Username`, `Password`) VALUES ('$newFirstName', '$newLastName', '$newClass', '$newUsername', '$newPassword')";
 
 			if (mysqli_query($dbConnect, $sql)) {
