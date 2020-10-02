@@ -1,4 +1,6 @@
-<head></head>
+<head>
+	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+</head>
 <body>
 	<?php 
 	include 'dbConnect.php';
@@ -27,16 +29,10 @@
 			//The password has been hashed
 			$sql = "INSERT INTO student (`FirstName`, `LastName`, `Class`, `Username`, `Password`) VALUES ('$newFirstName', '$newLastName', '$newClass', '$newUsername', '$newPassword')";
 
-			if (mysqli_query($dbConnect, $sql)) {
- 				echo "New record created successfully";
-			} else {
- 				 echo "Error: " . $sql . "<br>" . mysqli_error($dbConnect);
-			}
-
-
+			header("Location: index.php");
 		}
 	 ?>
-	<form method="post" action="">
+	<form method="post" action="" id="form">
 		<label for="firstName">First Name:</label><br>
 		<input type="text" name="firstName" required><br><br>
 		<label for="lastName">Last Name:</label><br>
@@ -47,9 +43,9 @@
 		<input type="text" name="username" required> <br><br>
 		<label for="password">Password:</label><br>
 		<input type="password" name="password" required> <br><br>
-		<input type="submit" name="submit">
-	 <button>
-	<a href="index.php">Back</a>
-</button>
+		<div class="form_buttons">
+		<input type="submit" name="submit" class="link">
+	<a href="index.php" class="link">Back</a>
+	</div>
 	</form>
 </body>
