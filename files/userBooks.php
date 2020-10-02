@@ -35,5 +35,8 @@
     	echo "<br>";
 }
 	?>	
+	<button>
+		<a href="loggedIn.php">Go back</a>
+	</button>
 </body>
 

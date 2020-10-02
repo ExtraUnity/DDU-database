@@ -28,7 +28,7 @@
 			$title = mysqli_real_escape_string($dbConnect, $title);
 
 
-	 		$sql = "SELECT * FROM book WHERE Title='$title' AND StudentId IS NULL";
+	 		$sql = "SELECT * FROM book WHERE Title LIKE '%$title%' AND StudentId IS NULL";
 
 			$result = mysqli_query($dbConnect,$sql) or die(mysqli_error($dbConnect));
 
@@ -42,7 +42,7 @@
 			$author = $_POST['searchAuthor'];
 			$author = mysqli_real_escape_string($dbConnect, $author);
 
-	 		$sql = "SELECT * FROM book WHERE Author='$author' AND StudentId IS NULL";
+	 		$sql = "SELECT * FROM book WHERE Author LIKE '%$author%' AND StudentId IS NULL";
 
 			$result = mysqli_query($dbConnect,$sql) or die(mysqli_error($dbConnect));
 
