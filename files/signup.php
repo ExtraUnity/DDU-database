@@ -29,13 +29,7 @@
 			//The password has been hashed
 			$sql = "INSERT INTO student (`FirstName`, `LastName`, `Class`, `Username`, `Password`) VALUES ('$newFirstName', '$newLastName', '$newClass', '$newUsername', '$newPassword')";
 
-			if (mysqli_query($dbConnect, $sql)) {
- 				echo "New record created successfully";
-			} else {
- 				 echo "Error: " . $sql . "<br>" . mysqli_error($dbConnect);
-			}
-
-
+			header("Location: index.php");
 		}
 	 ?>
 	<form method="post" action="" id="form">
