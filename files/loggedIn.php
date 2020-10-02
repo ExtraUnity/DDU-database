@@ -27,7 +27,7 @@
 	 </form
 >	 	  <div class="center">
 	 	<a href="logout.php" class="link">Logout</a> 
-		<a href="userBooks.php" class="link">Return Books</a>
+		<a href="userBooks.php" class="link">My Books</a>
 		        <form action="" method="POST" style="display: inline;">
                 <input type="submit" name="listAllBooks" value = "List all books" class="link">
         </form>
