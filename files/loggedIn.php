@@ -57,7 +57,7 @@
 	 	<a href="logout.php">Logout</a> 
 	 </button>
 	 <button>
-		<a href="userBooks.php">Return Books</a>
+		<a href="userBooks.php">Your Books</a>
 	</button>
 
 	 <?php 
