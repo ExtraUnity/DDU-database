@@ -4,25 +4,6 @@
 </head>
 <body>
         <?php
-        	//echo "this";
-        	if(isset($_POST['listAllBooks'])){
-        	echo "Hi";
-         	$sql = "SELECT * FROM book";
-
-         	$result = mysqli_query($dbConnect,$sql) or die(mysqli_error($dbConnect));
-
-                	while ($row = mysqli_fetch_array($result)) {
-                        	$title = mysqli_real_escape_string($dbConnect, $row['Title']);
-                        	$author = mysqli_real_escape_string($dbConnect, $row['Author']);
-
-                        	echo $title . " by " . $author;
-                        	if($row['StudentId'] != NULL){
-                                	echo "Udlånt";
-                        	}
-                        	echo "<br>";
-
-                	}
-                }
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			foreach ($_POST as $name => $value) {
 				$student = $_SESSION['studentId'];
@@ -76,6 +57,29 @@
         <form action="" method="POST">
                 <input type="submit" name="listAllBooks" value = "List all books">
         </form>
+
+	<?php
+	                if(isset($_POST['listAllBooks'])){
+                echo "Hi";
+                $sql = "SELECT * FROM book";
+
+                $result = mysqli_query($dbConnect,$sql) or die(mysqli_error($dbConnect));
+
+                        while ($row = mysqli_fetch_array($result)) {
+                                $title = mysqli_real_escape_string($dbConnect, $row['Title']);
+                                $author = mysqli_real_escape_string($dbConnect, $row['Author']);
+
+                                echo $title . " by " . $author;
+                                if($row['StudentId'] != NULL){
+                                        echo " Udlånt";
+                                }
+                                echo "<br>";
+
+                        }
+                }
+	?>
+
+
 
 	 <button>
 	 	<a href="logout.php">Logout</a> 
