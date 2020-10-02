@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 <body>
-	<?php
+        <?php
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			foreach ($_POST as $name => $value) {
 				$student = $_SESSION['studentId'];
@@ -24,10 +24,13 @@
 	 	<div class="form_buttons">
 	 	<input type="submit" name="search" class="link">
 	 	</div>
-	 </form>
-	 	  <div class="center">
+	 </form
+>	 	  <div class="center">
 	 	<a href="logout.php" class="link">Logout</a> 
 		<a href="userBooks.php" class="link">Return Books</a>
+		        <form action="" method="POST" style="display: inline;">
+                <input type="submit" name="listAllBooks" value = "List all books" class="link">
+        </form>
 		<?php 
 	 	
 	 		if($_SESSION['isAdmin'] == 1) {
@@ -67,9 +70,35 @@
        	echo "<form action='' method='POST'><input type='submit' name='" . $row['BookId'] . "' value='Loan Book'></form>";
     echo "<br>";
 	 	}
-	 }
+	 } else if(isset($_POST['listAllBooks'])) {
+     		$sql = "SELECT * FROM book";
+    		$result = mysqli_query($dbConnect,$sql) or die(mysqli_error($dbConnect));
+
+            while ($row = mysqli_fetch_array($result)) {
+                    $title = mysqli_real_escape_string($dbConnect, $row['Title']);
+                    $author = mysqli_real_escape_string($dbConnect, $row['Author']);
+
+                        echo $row['Title'] . " by " . $row['Author']; 
+
+                    if($row['StudentId'] != NULL){
+                            echo " - Udlånt <br>";
+                    } else {
+						echo "<form action='' method='POST' id='form' style='border: none;'><input type='submit' name='" . $row['BookId'] . "' value='Loan Book' class='small_button'></form>";
+					}
+    echo "<br>";
+            }
+    	}
+
 	  ?>
 </div>
+
+
+
+	
+
+
+
+
 
 	 
 
