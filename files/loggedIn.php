@@ -25,8 +25,10 @@
 	 <?php 
 	 	if(isset($_POST['searchTitle']) && $_POST['searchTitle'] != NULL) {
 	 		$title = $_POST['searchTitle'];
+			$title = mysqli_real_escape_string($dbConnect, $title);
 
-	 		$sql = "SELECT * FROM book WHERE Title='$title' AND StudentId IS NULL";
+
+	 		$sql = "SELECT * FROM book WHERE Title LIKE '%$title%' AND StudentId IS NULL";
 
 			$result = mysqli_query($dbConnect,$sql) or die(mysqli_error($dbConnect));
 
@@ -37,9 +39,10 @@
 }
 	 	} else if(isset($_POST['searchAuthor']) && $_POST['searchAuthor'] != NULL) {
 
-	 		$author = $_POST['searchAuthor'];
+			$author = $_POST['searchAuthor'];
+			$author = mysqli_real_escape_string($dbConnect, $author);
 
-	 		$sql = "SELECT * FROM book WHERE Author='$author' AND StudentId IS NULL";
+	 		$sql = "SELECT * FROM book WHERE Author LIKE '%$author%' AND StudentId IS NULL";
 
 			$result = mysqli_query($dbConnect,$sql) or die(mysqli_error($dbConnect));
 
@@ -53,6 +56,10 @@
 	 <button>
 	 	<a href="logout.php">Logout</a> 
 	 </button>
+	 <button>
+		<a href="userBooks.php">Return Books</a>
+	</button>
+
 	 <?php 
 	 	
 	 		if($_SESSION['isAdmin'] == 1) {

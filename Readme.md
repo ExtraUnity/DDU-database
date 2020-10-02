@@ -17,7 +17,7 @@ Tryk nu på knappen "importer".\
 Tryk på "Choose file" eller "Vælg fil".\
 Vælg filen "library.sql" fra mappen "DDU_database".\
 Tryk så på knappen "Go" eller "Udfør".\
-Åben et nyt vindu i webbrowseren og gå ind på localhost/DDU_database/files for at åbne HCØL library.
+Åben et nyt vindue i webbrowseren og gå ind på localhost/DDU_database/files for at åbne HCØL library.
 
 ## How to install HCØL library
 How to install our HCØL library:\
@@ -32,3 +32,11 @@ Press on "Choose file".\
 Choose the file "library.sql" from the folder "DDU_database".\
 Then press on "Go".\
 Open a new browser windoe and visit localhost/DDU_database/files to open our HCØL library.
+
+##Access admin options
+To access admin options like adding new books or resetting the library you need to be logged in as an admin.\
+As a teacher there is an admin account with the credentials: \
+Username: LærerAdmin\
+Password: læreradmin123\
+If you reset the library the admin accounts will also be deleted.\
+To make a new admin account you will need to directly interact with the database and change the boolean "IsAdmin" from 0 to 1.
