@@ -52,7 +52,33 @@
     echo "<br>";
 	 	}
 	 }
-	  ?>
+	?>	
+	<?php
+	//echo "this";
+	if(isset($_POST['listAllNames'])){
+	echo "Hi";
+	 $sql = "SELECT * FROM book";
+
+         $result = mysqli_query($dbConnect,$sql) or die(mysqli_error($dbConnect));
+	 
+         	while ($row = mysqli_fetch_array($result)) {
+			$title = mysqli_real_escape_string($dbConnect, $row['Title']);
+			$author = mysqli_real_escape_string($dbConnect, $row['Author']);
+			
+			echo $title . " by " . $author;
+			if($row['StudentId'] != NULL){
+				echo "Udlånt";
+			}
+			echo "<br>";
+
+		}		
+	}
+?>
+
+        <form action="" methode="POST">
+                <input type="submit" name="listAllNames" value = "List all books">
+        </form>
+
 	 <button>
 	 	<a href="logout.php">Logout</a> 
 	 </button>
