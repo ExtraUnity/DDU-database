@@ -8,8 +8,9 @@
 	header("Location: loggedIn.php");
 }
 		if(isset($_POST['yes'])) {
-			$sql = "DROP TABLE student";
-			$result = mysqli_query($dbConnect, $sql);
+			$sql1 = "DROP TABLE student";
+			$sql2 = "DROP TABLE book";
+			$result = mysqli_query($dbConnect, $sql1, $sql2);
 			header("Location: loggedIn.php");
 		} else if (isset($_POST['no'])) {
 			header("Location: loggedIn.php");
