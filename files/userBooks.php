@@ -1,6 +1,7 @@
 <head>
 	<?php include "checkSession.php"; ?>
 	<?php include "dbConnect.php"; ?>
+	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 
 <body>
@@ -13,13 +14,13 @@
                 }
         ?>
 
-	<h1>
+	<h1 id="title">
 	Welcome to your book list.
 	</h1>
-	<h2>
+	<h2 id="title">
 	See and return books your books. 
 	</h2>
-
+<div id="bookList" style="padding-top: 10px;">
 	<?php
 	$student = $_SESSION['studentId'];
 	$sql = "SELECT Title, Author, BookId FROM book WHERE StudentId ='$student'";
@@ -31,12 +32,15 @@
 
 	while ($row = mysqli_fetch_array($result)) {
     		echo $row['Title'] . " by " . $row['Author'];
-        	echo "<form action='' method='POST'><input type='submit' name='" . $row['BookId'] . "' value='Return Book'></form>";
-    	echo "<br>";
+        	echo "<form action='' method='POST' style='display: inline;'><input type='submit' name='" . $row['BookId'] . "' value='Return Book' class='small_button'></form>";
+    	echo "<br><br>";
 }
 	?>	
-	<button>
-		<a href="loggedIn.php">Go back</a>
-	</button>
+	</div>
+	<br>
+	<div style="margin-left: 45%; ">
+		<a href="loggedIn.php" class="link">Go back</a>
+	</div>
+
 </body>
 
