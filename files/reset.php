@@ -1,12 +1,12 @@
 <head>
-	<?php include "dbConnect.php" ?>
+	<?php include "dbConnect.php"; 
+	include "checkSession.php"?>
 </head>
 <body>
 	<?php
 		if(isset($_POST['yes'])) {
-			$sql1 = "DROP TABLE student";
-			$sql2 = "DROP TABLE book";
-			$result = mysqli_query($dbConnect, $sql1, $sql2);
+			$sql1 = "DROP TABLE student, book";
+			$result = mysqli_query($dbConnect, $sql1);
 			header("Location: loggedIn.php");
 		} else if (isset($_POST['no'])) {
 			header("Location: loggedIn.php");
