@@ -81,7 +81,7 @@
                         echo $row['Title'] . " by " . $row['Author']; 
 
                     if($row['StudentId'] != NULL){
-                            echo " - Udlånt <br>";
+                            echo " - Not available <br>";
                     } else {
 						echo "<form action='' method='POST' id='form' style='border: none;'><input type='submit' name='" . $row['BookId'] . "' value='Loan Book' class='small_button'></form>";
 					}
@@ -91,15 +91,4 @@
 
 	  ?>
 </div>
-
-
-
-	
-
-
-
-
-
-	 
-
 </body>
