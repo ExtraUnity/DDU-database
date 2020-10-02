@@ -1,4 +1,6 @@
-<head></head>
+<head>
+	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+</head>
 <body>
 	<?php 
 		include "dbConnect.php";
@@ -33,14 +35,14 @@
 
 		}
 	 ?>
-	<form action="" method="post">
+	<form action="" method="post" id="form">
 		<label for="username">Username:</label><br>
 		<input type="text" name="username"> <br><br>
 		<label for="password">Password:</label><br>
 		<input type="password" name="password"> <br><br>
-		<input type="submit" name="submit">
-		<button>
-	<a href="index.php">Back</a>
-</button>
+<div class="form_buttons">
+		<input type="submit" name="submit" class="link">
+		<a href="index.php" class="link">Back</a>
+		</div>
 	</form>
 </body>

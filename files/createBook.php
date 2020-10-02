@@ -1,5 +1,6 @@
 <head> 
 	<?php include "checkSession.php"; ?>
+	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 </head>
 <body>
 <?php
@@ -30,14 +31,14 @@ if($_SESSION['isAdmin'] != 1) {
 			}
 		}
 ?>
-	<form method="post" action="">
+	<form method="post" action="" id="form">
 		<label for="title">Title:</label><br>
 		<input type="text" name="title" required><br><br>
 		<label for="author">Author:</label><br>
 		<input type="text" name="author" required><br><br>
-		<input type="submit" name="submit">
-	<button>
-	<a href="loggedIn.php">Back</a>
-</button>
-	</form>
+		<div class="form_buttons">
+		<input type="submit" name="submit" class="link">
+		<a href="loggedIn.php" class="link">Back</a>
+		</div>
+		</form>
 </body>
